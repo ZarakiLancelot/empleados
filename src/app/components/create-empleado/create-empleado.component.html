@@ -3,13 +3,13 @@
         <div class="col-lg-6 offset-lg-3">
             <div class="card text-center">
                 <div class="card-body">
-                    <h3>Agregar Empleado
+                    <h3>{{ titulo }}
                         <div *ngIf="loading" class="spinner-border" style="text-align: float-right;" role="status">
                             <span class="sr-only">Loading...</span>
                         </div>
                     </h3>
                     <span *ngIf="submitted && createEmpleado.invalid" class="text-danger">¡TODOS LOS CAMPOS SON OBLIGATORIOS!</span>
-                    <form class="mt-4" [formGroup]="createEmpleado" (ngSubmit)="agregarEmpleado()">
+                    <form class="mt-4" [formGroup]="createEmpleado" (ngSubmit)="agregarEditarEmpleado()">
                         <div class="row">
                             <div class="col">
                                 <input class="form-control form-control-lg" type="text" name="" id="" placeholder="Nombre" formControlName="nombre">
@@ -22,7 +22,7 @@
                         <input type="number" class="form-control form-control-lg mt-3" placeholder="Salario" formControlName="salario">
                         <div class="mt-3">
                             <button type="button" class="btn btn-secondary btn-lg" style="margin-right: 6px;" routerLink="/list-empleados">Volver</button>
-                            <button type="submit" class="btn btn-dark btn-lg">Agregar</button>
+                            <button type="submit" class="btn btn-dark btn-lg">{{ accion }}</button>
                         </div>
                     </form>
                 </div>
