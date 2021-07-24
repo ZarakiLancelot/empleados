@@ -25,7 +25,7 @@
                     <td>1677682040101</td>
                     <td>2500</td>
                     <td>
-                        <i class="fas fa-edit fa-lg text-info mr-4"></i>
+                        <i class="fas fa-edit fa-lg text-info" style="margin-right: 6px;"></i>
                         <i class="fas fa-trash-alt fa-lg text-danger"></i>
                     </td>
                   </tr>
@@ -35,7 +35,7 @@
                     <td>1725253320101</td>
                     <td>1500</td>
                     <td>
-                        <i class="fas fa-edit fa-lg text-info mr-4"></i>
+                        <i class="fas fa-edit fa-lg text-info" style="margin-right: 6px;"></i>
                         <i class="fas fa-trash-alt fa-lg text-danger"></i>
                     </td>
                   </tr>
@@ -45,12 +45,17 @@
                     <td>1234567890101</td>
                     <td>1000</td>
                     <td>
-                        <i class="fas fa-edit fa-lg text-info mr-4"></i>
+                        <i class="fas fa-edit fa-lg text-info" style="margin-right: 6px;"></i>
                         <i class="fas fa-trash-alt fa-lg text-danger"></i>
                     </td>
                   </tr>
                 </tbody>
             </table>
+            <ul>
+              <li class="text" *ngFor="let item of items | async">
+                {{item.name}}
+              </li>
+            </ul>
         </div>
     </div>
 </div>
