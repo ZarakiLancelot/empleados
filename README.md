@@ -1,4 +1,5 @@
 # Empleados
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b45fd5bc-7631-4781-8612-c252b160bc91/deploy-status)](https://app.netlify.com/sites/angularempleados/deploys)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.2.
 
