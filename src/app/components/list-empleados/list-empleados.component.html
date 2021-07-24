@@ -8,7 +8,8 @@
                     <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
                   </svg></span> Agregar</button>
             </div>
-            <table class="table table-striped mt-5">
+            <h5 *ngIf="empleados.length == 0" class="mt-5">No hay Datos para mostrar</h5>
+            <table *ngIf="empleados.length > 0" class="table table-striped mt-5">
                 <thead>
                   <tr>
                     <th>Nombre</th>
@@ -19,34 +20,14 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Edwin</td>
-                    <td>Vásquez</td>
-                    <td>1677682040101</td>
-                    <td>2500</td>
+                  <tr *ngFor="let empleado of empleados">
+                    <td>{{ empleado.nombre }}</td>
+                    <td>{{ empleado.apellido }}</td>
+                    <td>{{ empleado.documento }}</td>
+                    <td>{{ empleado.salario | currency }}</td>
                     <td>
                         <i class="fas fa-edit fa-lg text-info" style="margin-right: 6px;"></i>
-                        <i class="fas fa-trash-alt fa-lg text-danger"></i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Sandy</td>
-                    <td>Saregure</td>
-                    <td>1725253320101</td>
-                    <td>1500</td>
-                    <td>
-                        <i class="fas fa-edit fa-lg text-info" style="margin-right: 6px;"></i>
-                        <i class="fas fa-trash-alt fa-lg text-danger"></i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Allan</td>
-                    <td>Vásquez</td>
-                    <td>1234567890101</td>
-                    <td>1000</td>
-                    <td>
-                        <i class="fas fa-edit fa-lg text-info" style="margin-right: 6px;"></i>
-                        <i class="fas fa-trash-alt fa-lg text-danger"></i>
+                        <i (click)="eliminarEmpleado(empleado.id)" class="fas fa-trash-alt fa-lg text-danger"></i>
                     </td>
                   </tr>
                 </tbody>
